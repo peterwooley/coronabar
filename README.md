@@ -37,6 +37,8 @@ Python 3 and [rumps](https://rumps.readthedocs.io/en/latest/index.html).
 
 Why not? 🤷
 
+## Menu Bar Icon
+The icon is [virus by Nook Fulloption from the Noun Project](https://thenounproject.com/term/virus/1381300)
 
 ## About me
 

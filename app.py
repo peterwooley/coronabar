@@ -2,23 +2,21 @@ import rumps
 import requests
 import datetime
 import webbrowser
+import humanize
 
 
 class CoronaBar(object):
     base_api_url = "https://coronavirus-19-api.herokuapp.com/countries"
-    default_country = "USA"
+    default_country = "World"
     update_interval = 900  # seconds
     about_url = "https://github.com/duarteocarmo/coronabar"
 
     # APP
     def __init__(self):
-        self.app = rumps.App("Corona Bar", "🦠")
+        self.app = rumps.App("Corona Bar", None, "icon.icns", template=True)
         self.countries = rumps.MenuItem(title="Select Country")
-        self.about = rumps.MenuItem(title="About", callback=self.open_page)
-
         self.country = self.default_country
-
-        self.app.menu = [self.countries, self.about]
+        self.app.menu = [self.countries]
 
         country_list = self.get_country_list()
         self.setup(country_list, self.country)
@@ -34,13 +32,6 @@ class CoronaBar(object):
         self.create_country_listing(
             rumps.MenuItem(title=f"{self.default_country}")
         )
-
-    def open_page(self, sender):
-        try:
-            webbrowser.open(self.about_url)
-        except Exception as e:
-            print(str(e))
-            return False
 
     def create_country_listing(self, country):
         # print("Creating")
@@ -66,7 +57,9 @@ class CoronaBar(object):
                 "Quit", rumps.MenuItem(self.string_mapper(k, v))
             )
 
-        current_time = datetime.datetime.now().strftime("%H:%M")
+        self.app.title = humanize.intword(data['cases'])
+
+        current_time = datetime.datetime.now().strftime("%-I:%M%p")
         self.app.menu.insert_before(
             "Quit", rumps.MenuItem(title=f"Updated at {current_time}")
         )
