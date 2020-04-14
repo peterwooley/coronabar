@@ -54,10 +54,10 @@ class CoronaBar(object):
         data = self.get_country_data(country.title)
         for k, v in data.items():
             self.app.menu.insert_before(
-                "Quit", rumps.MenuItem(self.string_mapper(k, v))
+                "Quit", rumps.MenuItem(self.string_mapper(k, humanize.intcomma(v)))
             )
 
-        self.app.title = humanize.intword(data['cases'])
+        self.app.title = humanize.intcomma(data['cases'])
 
         current_time = datetime.datetime.now().strftime("%-I:%M%p")
         self.app.menu.insert_before(

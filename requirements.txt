@@ -10,3 +10,4 @@ pyobjc-framework-Cocoa==6.1
 requests==2.23.0
 rumps==0.3.0
 urllib3==1.25.8
+humanize==2.3.0
