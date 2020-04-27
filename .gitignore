@@ -2,3 +2,5 @@
 dist/
 build/
 env/
+.eggs/
+CoronaBar.egg-info/
