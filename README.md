@@ -8,7 +8,7 @@ This is a fork of the great work done by [duarteocarmo](https://github.com/duart
 <img src="images/screenshot.png" width="415px" alt="CoronaBar running in the macOS menu bar on 2020-04-27">
 
 ## Install
-1. Download the latest version [CoronaVirus.zip](https://github.com/peterwooley/coronabar/releases/latest/download/CoronaBar.zip).
+1. Download the latest version of [CoronaBar.zip](https://github.com/peterwooley/coronabar/releases/latest/download/CoronaBar.zip).
 2. Unzip CoronaVirus.app and move it to the  `/Applications` directory.
 3. When opening for the first time, right click (or context click) and click Open.
     * If you have problems opening, see [the Support doc on running unsigned apps](https://support.apple.com/en-us/HT202491).
