@@ -61,7 +61,7 @@ class CoronaBar(object):
 
         current_time = datetime.datetime.now().strftime("%-I:%M%p")
         self.app.menu.insert_before(
-            "Quit", rumps.MenuItem(title=f"Updated at {current_time}")
+            "Quit", rumps.MenuItem(title=f"Updated at {current_time}", callback=self.on_update)
         )
         # print(f"Updated,country is {self.country}")
 
