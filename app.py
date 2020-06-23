@@ -96,8 +96,17 @@ class CoronaBar(object):
             return f"Deaths Today: {value}"
 
         elif key == "casesPerOneMillion":
-            return f"Per Million: {value}"
+            return f"Cases Per Million: {value}"
 
+        elif key == "deathsPerOneMillion":
+            return f"Deaths Per Million: {value}"
+        
+        elif key == "totalTests":
+            return f"Total Tests: {value}"
+
+        elif key == "testsPerOneMillion":
+            return f"Tests Per Million: {value}"
+        
         else:
             return f"{key}: {value}"
 
